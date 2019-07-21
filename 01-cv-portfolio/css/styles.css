@@ -1,3 +1,10 @@
+.card-body{
+	min-height: 25em;
+    max-height: 25em;
+    overflow: scroll;
+}
+
+
 
 /*
 ====================================================
@@ -84,7 +91,7 @@ b.max-bold{ font-weight: 700; }
 
 .section{ padding: 100px 0 50px; }
 
-.section .heading{ margin-bottom: 60px; }
+.section .heading{ margin-bottom: 30px; }
 
 .section .heading:before{ content:''; height: 10px; width: 50px; border-radius: 5px;
 	margin-bottom: 20px; display: block; background: #FFA804; }
@@ -101,6 +108,9 @@ b.max-bold{ font-weight: 700; }
 .font-semi-white{ color: #ddd; }
 
 .font-lite-black{ color: #999; }
+
+.section{ padding-top: 1em !important; 
+padding-bottom: 1em !important;}
 
 
 /* ---------------------------------
