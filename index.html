@@ -1,579 +1,839 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Hi, I'm William</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
-	<!-- Stylesheets -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link href="common-css/bootstrap.css" rel="stylesheet">	
-	<link href="common-css/ionicons.css" rel="stylesheet">	
-	<link href="common-css/fluidbox.min.css" rel="stylesheet">	
-	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">	
-	<link href="01-cv-portfolio/css/responsive.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>	html {scroll-behavior: smooth;}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William Scott Paka — Senior Data Scientist</title>
+<meta name="description" content="William Scott Paka — Senior Data Scientist at Walmart. 8+ years in NLP, machine learning, deep learning, recommendation engines and computer vision. 5 publications, 5 patents, $20M GMV impact.">
+<meta property="og:title" content="William Scott Paka — Senior Data Scientist">
+<meta property="og:description" content="Senior Data Scientist at Walmart with 8+ years of experience in NLP, ML, deep learning, recommendation engines and computer vision. 5 publications · 5 patents · $20M GMV impact.">
+<meta property="og:image" content="https://williamscott701.github.io/images/dp.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://williamscott701.github.io/">
+<link rel="canonical" href="https://williamscott701.github.io/">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+/* Apply saved theme before first paint to avoid flash */
+(function () {
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('wsp-theme');
+    if (t === 'dark' || t === 'light') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<style>
+/* ============ Design tokens ============ */
+:root {
+  --bg: #faf7f2;
+  --bg-elevated: #ffffff;
+  --bg-nav: rgba(250, 247, 242, 0.88);
+  --ink: #23211d;
+  --ink-soft: #55524b;
+  --ink-faint: #6f6b62;
+  --accent: #35386e;          /* deep indigo */
+  --accent-strong: #2b2e5e;
+  --accent-soft: rgba(58, 61, 122, 0.09);
+  --accent-contrast: #ffffff;
+  --rule: rgba(35, 33, 29, 0.14);
+  --rule-soft: rgba(35, 33, 29, 0.08);
+  --timeline: rgba(58, 61, 122, 0.28);
+  --card-shadow: 0 1px 2px rgba(35, 33, 29, 0.05), 0 8px 28px rgba(35, 33, 29, 0.06);
+  --chip-bg: rgba(35, 33, 29, 0.05);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #211f1c;
+    --bg-elevated: #2a2825;
+    --bg-nav: rgba(33, 31, 28, 0.88);
+    --ink: #ece8e1;
+    --ink-soft: #bcb7ad;
+    --ink-faint: #948f85;
+    --accent: #a7abe8;
+    --accent-strong: #bcbfef;
+    --accent-soft: rgba(167, 171, 232, 0.12);
+    --accent-contrast: #191a2e;
+    --rule: rgba(236, 232, 225, 0.18);
+    --rule-soft: rgba(236, 232, 225, 0.10);
+    --timeline: rgba(167, 171, 232, 0.35);
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 28px rgba(0, 0, 0, 0.28);
+    --chip-bg: rgba(236, 232, 225, 0.07);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #211f1c;
+  --bg-elevated: #2a2825;
+  --bg-nav: rgba(33, 31, 28, 0.88);
+  --ink: #ece8e1;
+  --ink-soft: #bcb7ad;
+  --ink-faint: #948f85;
+  --accent: #a7abe8;
+  --accent-strong: #bcbfef;
+  --accent-soft: rgba(167, 171, 232, 0.12);
+  --accent-contrast: #191a2e;
+  --rule: rgba(236, 232, 225, 0.18);
+  --rule-soft: rgba(236, 232, 225, 0.10);
+  --timeline: rgba(167, 171, 232, 0.35);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 28px rgba(0, 0, 0, 0.28);
+  --chip-bg: rgba(236, 232, 225, 0.07);
+  color-scheme: dark;
+}
+:root[data-theme="light"] { color-scheme: light; }
+
+/* ============ Reset & base ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color .3s ease, color .3s ease;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent-strong); }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
+
+.wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Skip link */
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 200;
+  background: var(--accent); color: var(--accent-contrast);
+  padding: .6rem 1.1rem; border-radius: 0 0 .5rem .5rem;
+  font-weight: 600; text-decoration: none;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 0; color: var(--accent-contrast); }
+
+/* ============ Nav ============ */
+.site-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg-nav);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: .8rem 1.5rem;
+  max-width: 62rem; margin: 0 auto;
+}
+.brand {
+  font-family: var(--serif); font-weight: 700; font-size: 1.2rem;
+  color: var(--ink); text-decoration: none; white-space: nowrap;
+}
+.brand:hover { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: .25rem; list-style: none; }
+.nav-links a {
+  color: var(--ink-soft); text-decoration: none; font-size: .92rem; font-weight: 500;
+  padding: .45rem .7rem; border-radius: .45rem;
+}
+.nav-links a:hover { color: var(--accent); background: var(--accent-soft); }
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.4rem; height: 2.4rem; margin-left: .35rem;
+  border: 1px solid var(--rule); border-radius: 999px;
+  background: transparent; color: var(--ink-soft); cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.theme-toggle svg { width: 1.1rem; height: 1.1rem; }
+.icon-sun { display: none; }
+:root[data-theme="dark"] .icon-sun { display: block; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .icon-moon { display: none; }
+}
+
+@media (max-width: 47.9rem) {
+  .nav-links li.nav-optional { display: none; }
+}
+@media (max-width: 33rem) {
+  .nav-links li:not(.nav-keep):not(:last-child) { display: none; }
+  .nav-links { gap: 0; }
+}
+
+/* ============ Hero ============ */
+.hero { padding: 5.5rem 0 4.5rem; }
+.hero-grid {
+  display: grid; grid-template-columns: 1fr auto; gap: 3.5rem; align-items: center;
+}
+.kicker {
+  font-size: .8rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.1rem;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 6.5vw, 4.3rem);
+  font-weight: 600; margin-bottom: 1rem;
+}
+.hero .role {
+  font-family: var(--serif); font-style: italic; font-weight: 500;
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem); color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+}
+.hero .role strong { color: var(--accent); font-style: normal; font-weight: 600; }
+.hero .summary {
+  max-width: 34em; color: var(--ink-soft); font-size: 1.08rem; margin-bottom: 2.2rem;
+}
+.hero-photo {
+  width: clamp(11rem, 22vw, 15rem); height: clamp(11rem, 22vw, 15rem);
+  object-fit: cover; border-radius: 50%;
+  border: 1px solid var(--rule);
+  box-shadow: var(--card-shadow);
+}
+.photo-frame { position: relative; width: fit-content; justify-self: center; }
+.photo-frame::after {
+  content: ""; position: absolute; inset: -0.85rem;
+  border: 1px solid var(--timeline); border-radius: 50%;
+  pointer-events: none;
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-weight: 600; font-size: .95rem; text-decoration: none;
+  padding: .75rem 1.4rem; border-radius: 999px;
+  transition: transform .15s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn svg { width: 1rem; height: 1rem; }
+.btn-primary { background: var(--accent); color: var(--accent-contrast); }
+.btn-primary:hover { background: var(--accent-strong); color: var(--accent-contrast); transform: translateY(-1px); }
+.btn-ghost { border: 1px solid var(--rule); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.icon-links { display: inline-flex; gap: .35rem; margin-left: .2rem; }
+.icon-links a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem; border-radius: 999px;
+  color: var(--ink-soft); border: 1px solid transparent;
+}
+.icon-links a:hover { color: var(--accent); background: var(--accent-soft); }
+.icon-links svg { width: 1.2rem; height: 1.2rem; }
+
+/* Stats band */
+.stats {
+  margin-top: 4.2rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.stat { padding: 1.6rem 1rem; text-align: center; }
+.stat + .stat { border-left: 1px solid var(--rule-soft); }
+.stat .num {
+  font-family: var(--serif); font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 600; color: var(--accent); display: block; line-height: 1.1;
+}
+.stat .label {
+  display: block; margin-top: .35rem; font-size: .78rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint);
+}
+
+/* ============ Sections ============ */
+section { padding: 4.5rem 0 1rem; }
+.section-head { display: flex; align-items: baseline; gap: 1.4rem; margin-bottom: 2.6rem; }
+.section-head h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+.section-head .rule { flex: 1; height: 1px; background: var(--rule); }
+.section-head .index {
+  font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--ink-faint);
+}
+
+/* ============ Experience timeline ============ */
+.timeline { list-style: none; border-left: 1px solid var(--timeline); margin-left: .4rem; }
+.timeline > li { position: relative; padding: 0 0 3rem 2.2rem; }
+.timeline > li:last-child { padding-bottom: 1rem; }
+.timeline > li::before {
+  content: ""; position: absolute; left: -0.34rem; top: .5rem;
+  width: .6rem; height: .6rem; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--bg);
+}
+.job-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .9rem; margin-bottom: .2rem; }
+.job-head h3 { font-size: 1.45rem; }
+.job-dates {
+  font-size: .82rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-faint); white-space: nowrap;
+}
+.job-role { font-family: var(--serif); font-style: italic; color: var(--accent); font-size: 1.05rem; margin-bottom: .9rem; }
+.job-points { list-style: none; }
+.job-points li {
+  position: relative; padding-left: 1.35rem; margin-bottom: .55rem;
+  color: var(--ink-soft); max-width: 46em;
+}
+.job-points li::before {
+  content: ""; position: absolute; left: .1rem; top: .68em;
+  width: .38rem; height: .38rem; border-radius: 1px;
+  background: var(--timeline); transform: rotate(45deg);
+}
+.job-points strong { color: var(--ink); font-weight: 600; }
+
+.subsection-label {
+  font-size: .8rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); margin: 2.6rem 0 1.6rem; padding-left: 2.6rem; position: relative;
+}
+.subsection-label::before {
+  content: ""; position: absolute; left: 0; top: 50%; width: 2rem; height: 1px; background: var(--accent);
+}
+.intern-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.intern-card {
+  background: var(--bg-elevated); border: 1px solid var(--rule-soft);
+  border-radius: .8rem; padding: 1.6rem 1.7rem; box-shadow: var(--card-shadow);
+}
+.intern-card h4 { font-size: 1.2rem; margin-bottom: .15rem; }
+.intern-card .job-dates { display: block; margin-bottom: .8rem; }
+.intern-card p { color: var(--ink-soft); font-size: .98rem; }
+
+/* ============ Publications ============ */
+.pub-list { list-style: none; counter-reset: pub; }
+.pub-list > li {
+  counter-increment: pub;
+  display: grid; grid-template-columns: 3.2rem 1fr; gap: 1.2rem;
+  padding: 1.5rem 0; border-top: 1px solid var(--rule-soft);
+}
+.pub-list > li:last-child { border-bottom: 1px solid var(--rule-soft); }
+.pub-list > li::before {
+  content: counter(pub, decimal-leading-zero);
+  font-family: var(--serif); font-style: italic; font-size: 1.35rem;
+  color: var(--ink-faint); line-height: 1.3;
+}
+.pub-title { font-family: var(--serif); font-weight: 600; font-size: 1.18rem; margin-bottom: .3rem; }
+.pub-detail { color: var(--ink-soft); font-size: .98rem; max-width: 46em; }
+.venue {
+  display: inline-block; margin-top: .55rem;
+  font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  padding: .25rem .7rem; border-radius: 999px;
+}
+.patent-note {
+  margin-top: 1.8rem; padding: 1.4rem 1.7rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft); border-radius: 0 .7rem .7rem 0;
+  color: var(--ink-soft); max-width: 46em;
+}
+.patent-note strong { color: var(--ink); }
+.patent-note .pub-title { margin-bottom: .25rem; }
+
+/* ============ Skills ============ */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 3rem; }
+.skill-group { padding-top: 1.2rem; border-top: 1px solid var(--rule-soft); }
+.skill-group h3 { font-size: 1.15rem; margin-bottom: .9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; }
+.chips li {
+  font-size: .88rem; font-weight: 500; color: var(--ink-soft);
+  background: var(--chip-bg); border: 1px solid var(--rule-soft);
+  padding: .32rem .8rem; border-radius: 999px;
+}
+
+/* ============ Education & certifications ============ */
+.edu-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; }
+.edu-item { padding: 1.3rem 0; border-top: 1px solid var(--rule-soft); }
+.edu-item h3 { font-size: 1.25rem; margin-bottom: .2rem; }
+.edu-item .degree { color: var(--ink-soft); }
+.edu-item .meta { margin-top: .3rem; font-size: .85rem; color: var(--ink-faint); }
+.edu-item .meta strong { color: var(--accent); font-weight: 600; }
+.cert-list { list-style: none; }
+.cert-list li {
+  padding: .85rem 0 .85rem 1.7rem; border-top: 1px solid var(--rule-soft);
+  position: relative; color: var(--ink-soft); font-size: .97rem;
+}
+.cert-list li::before {
+  content: ""; position: absolute; left: .1rem; top: 1.35rem;
+  width: .55rem; height: .55rem; border-radius: 50%;
+  border: 1.5px solid var(--accent);
+}
+.cert-list .issuer { display: block; font-size: .8rem; color: var(--ink-faint); letter-spacing: .06em; text-transform: uppercase; margin-top: .1rem; }
+.col-label {
+  font-size: .8rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem;
+}
+
+/* ============ Achievements ============ */
+.ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.ach-card {
+  display: flex; gap: 1.1rem; align-items: flex-start;
+  background: var(--bg-elevated); border: 1px solid var(--rule-soft);
+  border-radius: .8rem; padding: 1.4rem 1.5rem; box-shadow: var(--card-shadow);
+}
+.ach-card svg { width: 1.4rem; height: 1.4rem; flex-shrink: 0; color: var(--accent); margin-top: .15rem; }
+.ach-card p { color: var(--ink-soft); font-size: .97rem; }
+.ach-card strong { color: var(--ink); }
+
+/* ============ Contact / footer ============ */
+.contact { padding-bottom: 4rem; }
+.contact-inner {
+  text-align: center; padding: 3.6rem 1.5rem;
+  border: 1px solid var(--rule-soft); border-radius: 1rem;
+  background: var(--bg-elevated); box-shadow: var(--card-shadow);
+}
+.contact-inner h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); margin-bottom: .9rem; }
+.contact-inner .lede { color: var(--ink-soft); max-width: 32em; margin: 0 auto 2rem; }
+.contact-lines { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem 2.2rem; margin-bottom: 2rem; }
+.contact-lines a, .contact-lines span {
+  display: inline-flex; align-items: center; gap: .55rem;
+  color: var(--ink-soft); text-decoration: none; font-size: .98rem;
+}
+.contact-lines a:hover { color: var(--accent); }
+.contact-lines svg { width: 1.05rem; height: 1.05rem; color: var(--accent); }
+footer {
+  border-top: 1px solid var(--rule-soft);
+  padding: 1.8rem 1.5rem; text-align: center;
+  color: var(--ink-faint); font-size: .9rem;
+}
+
+/* ============ Scroll reveal ============ */
+html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+html.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn, .theme-toggle { transition: none; }
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 56rem) {
+  .edu-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 47.9rem) {
+  .hero { padding: 3.2rem 0 3rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .photo-frame { order: -1; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3) { border-left: none; }
+  .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--rule-soft); }
+  .intern-grid, .skills-grid, .ach-grid { grid-template-columns: 1fr; }
+  section { padding: 3.2rem 0 .6rem; }
+  .section-head { gap: 1rem; margin-bottom: 2rem; }
+  .pub-list > li { grid-template-columns: 2.4rem 1fr; gap: .9rem; }
+  .timeline > li { padding-left: 1.7rem; }
+}
+</style>
 </head>
-<body data-gr-c-s-loaded="true" id="ontop">
-	<header>
-	<div class="container">
-	<div class="heading-wrapper" style="background: rgba(255,173,1, 0.9) !important">
-	<div class="row">
-	<div class="col-sm-6 col-md-6 col-lg-4">
-	<div class="info">
-	<i class="icon ion-ios-location-outline"></i>
-	<div class="right-area">
-	<h5>Delhi</h5>
-	<h5>India, 110020</h5>
-	</div>
-	</div>
-	</div>
-	<div class="col-sm-6 col-md-6 col-lg-4">
-	<div class="info">
-	<i class="icon ion-ios-telephone-outline"></i>
-	<div class="right-area">
-	<h5>+91-7845108300</h5>
-	<h6>24/7</h6>
-	</div>
-	</div>
-	</div>
-	<div class="col-sm-6 col-md-6 col-lg-4">
-	<div class="info">
-	<i class="icon ion-ios-chatboxes-outline"></i>
-	<div class="right-area">
-	<h5>williamscott701@gmail.com</h5>
-	<h6>REPLY WITHIN FEW HOURS</h6>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	<a class="downlad-btn" target="_blank" href="resume.pdf">Download CV</a>
-	</div>
-	</header>
-	
-	<section class="intro-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-1 col-lg-2"></div>
-				<div class="col-md-10 col-lg-8">
-					<div class="intro" style="border-radius: 20px;">
-						<div class="profile-img"><img src="images/dp.png" alt=""></div>
-						<h2><b>William Scott Paka</b></h2>
-						<h4 style="color: #FFAD01"><b>Data Science Enthusiat | X-Fullstack Developer</b></h4>
-						<ul class="information margin-tb-30" style="margin-top: 1em;">
-							<li><a class="mailto" href="mailto:williamscott701@gmail.com"><b>Email: </b>williamscott701@gmail.com</a></li>
-							<li><b>Mobile: </b>+91-7845108300</li>				
-						</ul>
-						<ul class="social-icons">
-							<li><a href="https://github.com/williamscott701/" target="_blank"><i class="ion-social-github"></i></a></li>
-							<li><a href="https://www.linkedin.com/in/ws701/" target="_blank"><i class="ion-social-linkedin"></i></a></li>
-							<li><a href="https://medium.com/@williamscott701" target="_blank"><i class="ion ion-android-arrow-dropdown"></i></a></li>
-						</ul>
-					</div><!-- intro -->
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- intro-section -->
-	
-	
-	
-	<section class="about-section section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>About me</b></h3>
-						<h6 class="font-lite-black"><b>PROFESSIONAL PATH</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-					<p class="margin-b-50">Successful professional with 2 years of work experience as <b>"Head of Development"</b> in a start-up, leading a highly skilled team of 8+ employees and interns in building a robust Spring MVC e-commerce application. Currently a Masters student in IIITD specializing in <b>Artificial Intelligence</b>. Enthusiast in Data Science, with demonstrated abilites in  AI / ML / DL / IR / NLP / CV having developed solid real-world projects. <b>Published a paper on “Multitask Learning for Blackmarket Tweet Detection” </b>. Current research works include developing a <b>Novel Topic Based Generative Model</b> to find the sentiment of text given a topic. Successful in intense and demanding environments, providing decisive team leadership with a track record of being highly motivated and goal oriented.</p>
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- about-section -->
-	
-	<section class="skills-section section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 center-text">
-					<div class="heading">
-						<h3><b>Technical Skills</b></h3>
-						<h6 class="font-lite-black"><b>I'M GOOD AT</b></h6>
-					</div>
-				</div><!-- col-sm-12 -->
-			
-				<div class="col-sm-12 col-md-6">
-					<h4><b>Programming Language</b></h4>
-					<h6 class="expert">EXPERT</h6>
-					<span class="margin-tb-20"></span>
-			
-						
-					<div class="line-progress margin-b-20" data-prog-percent=".90"><div></div>
-						<p class="progress-title"><b>Python</b></p></div>
-					<div class="line-progress margin-b-20" data-prog-percent=".90"><div></div>
-						<p class="progress-title"><b>Java / PHP / ASP</b></p></div>
-					<div class="line-progress margin-b-20" data-prog-percent=".85"><div></div>
-						<p class="progress-title"><b>Ionic / Angular</b></p></div>
-					<div class="line-progress margin-b-50" data-prog-percent=".85"><div></div>
-						<p class="progress-title"><b>C++</b></p></div>
+<body>
 
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-6">
-					<h4><b>Tools and Technologies</b></h4>
-					<h6 class="expert">EXPERT</h6>
-					<span class="margin-tb-20"></span>
-					<div class="line-progress margin-b-20" data-prog-percent=".90"><div></div>
-						<p class="progress-title"><b>J2EE / Spring MVC</b></p></div>
-					<div class="line-progress margin-b-20" data-prog-percent=".90"><div></div>
-						<p class="progress-title"><b>PyTorch / Keras / Scikit-Learn / NLTK / SWN</b></p></div>
-					<div class="line-progress margin-b-50" data-prog-percent=".85"><div></div>
-						<p class="progress-title"><b>GitHub / Bluemix / AWS</b></p></div>
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-6">
-					<h4><b>Technical Electives</b></h4>
-					<b>
-						<div class="information" style="margin-top: 1em;line-height: 2em;">
-							Artificial Intelligence<br>
-							Machine Learning<br>
-							Deep Learning<br>
-							Information Retrieval<br>
-							Natural Language Processing<br>
-						</div>
-					</b>
-					<br><br>
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-6">
-					<h4><b>Expertise Area</b></h4>
-					<b>
-						<div class="information" style="margin-top: 1em;line-height: 2em;">
-							AI / ML / DL<br>
-							Web Development (Frontend, Backend & Database)<br>
-							Hybrid App Development<br>
-						</div>
-					</b>
-					<br><br>
-				</div><!-- col-md-6 -->
-				
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- skills-section -->
+<a class="skip-link" href="#main">Skip to content</a>
 
+<header class="site-nav">
+  <nav class="nav-inner" aria-label="Primary">
+    <a class="brand" href="#top">W.S. Paka</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li class="nav-optional"><a href="#publications">Publications</a></li>
+      <li class="nav-optional"><a href="#skills">Skills</a></li>
+      <li class="nav-optional"><a href="#education">Education</a></li>
+      <li class="nav-keep"><a href="#contact">Contact</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark or light theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-	<!-- <section class="skills-section section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Certifications</b></h3>
-					</div>
-				</div>
-				<div class="col-sm-8" style="line-height: 3em !important;display: block;">
-					<div class="experience margin-b-50"></div>
-					<div class="experience margin-b-10" style="line-height: 3em !important;display: block;">
-						<p class="progress-title"  style="line-height: 3em !important;display: block;"><b><a href="https://www.coursera.org/account/accomplishments/verify/2VSQP6W2EBQZ" target="_blank">1. &nbsp;Machine Learning Certified in Stanford University Coursera Course by Andrew NG</b></a></p>
-					</div>
-					<div class="experience margin-b-10" style="line-height: 3em !important;display: block;">
-						<p class="progress-title"  style="line-height: 3em !important;display: block;"><b><a href="https://www.coursera.org/account/accomplishments/verify/7CKTMJGQDP9U" target="_blank">2. &nbsp;Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization – deeplearning.ai</b></a></p>
-					</div>
-			</div>
-		</div>
-		
-	</section> -->
+<main id="main">
 
+  <!-- ================= Hero ================= -->
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">Senior Data Scientist · Bangalore, India</p>
+          <h1>William Scott Paka</h1>
+          <p class="role">Machine learning at scale, at <strong>Walmart</strong></p>
+          <p class="summary">Senior Data Scientist with 8+ years of experience in natural language processing, machine learning, deep learning, recommendation engines and computer vision. M.Tech in Artificial Intelligence from IIIT Delhi. Published 5 papers and holds 5 patents building state-of-the-art models in NLP.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="resume.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Resume
+            </a>
+            <a class="btn btn-ghost" href="mailto:williamscott701@icloud.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              Get in touch
+            </a>
+            <div class="icon-links">
+              <a href="https://www.linkedin.com/in/williamscottp/" aria-label="LinkedIn profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              </a>
+              <a href="https://github.com/williamscott701" aria-label="GitHub profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+              </a>
+              <a href="https://medium.com/@williamscott701" aria-label="Medium blog">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="photo-frame">
+          <img class="hero-photo" src="images/dp.png" alt="Portrait of William Scott Paka" width="240" height="240">
+        </div>
+      </div>
 
-	<section class="education-section section mt-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Certifications</b></h3>
-						<!--<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>-->
-					</div>
-				</div><!-- col-sm-4 -->
-								<div class="col-sm-8">				
-					<div class="experience margin-b-50"></div>
-					<div class="experience margin-b-20">						
-						<p class="progress-title margin-tb-15"><a href="https://www.coursera.org/account/accomplishments/verify/2VSQP6W2EBQZ" target="_blank"><b style="line-height: 1.6em;">Machine Learning Certified in Stanford University Coursera Course by Andrew NG</b></a></p>
-					<h5 class="font-yellow"><b>(Feb, 19)</b></h5>						
-					</div>
-					<div class="experience margin-b-20">						
-						<p class="progress-title margin-tb-15"><a href="https://www.coursera.org/account/accomplishments/verify/7CKTMJGQDP9U" target="_blank"><b style="line-height: 1.6em;">Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization – deeplearning.ai</b></a></p>
-						<h5 class="font-yellow"><b>(Mar, 19)</b></h5>
-					</div>
-					<div class="experience margin-b-20">						
-						<p class="progress-title margin-tb-15"><b style="line-height: 1.6em;">Applied AI with Deep Learning – IBM</b></p>
-						<h5 class="font-yellow"><b>(Ongoing)</b></h5>
-					</div>	
-								</div>
-			</div>
-		</div>		
-	</section><!-- Internship-section -->
-	
-	
-	<section class="skills-section section"><!-- Project And Research -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 center-text">
-					<div class="heading" style="margin-bottom: 5px;">
-						<h3><b>Projects and Research</b></h3>
-					</div>
-				</div><!-- col-sm-12 -->
-			
-				<div class="col-sm-12 col-md-4 margin-tb-30">
-					<div class="card p-2">
-						<div class="card-body">
-							<h4><b>Sluice Network on Multi Task Learning to Detect Blackmarket tweets</b></h4>
-							<h6 class="expert">(December 18 – April 19)</h6><span class="margin-tb-20"></span>
-							<p class="progress-title"><b>Under: Dr. Tanmoy Chakraborty, IIITD</b></p>
-							<p class="progress-title ">In this project we implemented Multitask Learning model using cross stitch units to detect tweets that are posted in blackmarket. We used primary task to be detection of blackmarket tweet and the second task is to predict the likes and retweets of the tweet. We published this work in Asonam, 2019. </p>
-						</div>
-					</div>
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-4 margin-tb-30">
-					<div class="card p-2">
-						<div class="card-body">
-							<h4><b>Individual Primate Identification using facial features</b></h4>
-							<h6 class="expert">(January 2019 – May 2019)</h6><span class="margin-tb-20"></span>
-							<p class="progress-title"><b>Under: Dr. Saket Anand, IIITD</b></p>
-							<p class="progress-title ">In this research project we explored ways to identify individuals in Monkeys and Macaques which is considered a difficult problem statement. We have implemented few of the solutions in which we can learn a pair wise loss using KL Divergence. We have performed the tasks on classification, open set and closed set and compared the results. </p>
-						</div>
-					</div>
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-4 margin-tb-30">
-					<div class="card p-2">
-						<div class="card-body">
-							<h4><b>Code Retrieval based on Weighted Similarities of Control Flow & Structure</b></h4>
-							<h6 class="expert">(December 18 – April 19)</h6><span class="margin-tb-20"></span>
-							<p class="progress-title"><b>Under: Dr. Tanmoy Chakraborty, IIITD</b></p>
-							<p class="progress-title ">In this project we aim at suggesting the user the relevant answer from stack overflow by using textual and code similarities from query. We made the first attempt to make use of the adjacency matrix of the codes’ Control Flow Graph to find multiple similarity measures that can be used together to find a similarity measure.</p>
-						</div>
-					</div>
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-4 margin-tb-30">
-					<div class="card p-2">
-						<div class="card-body">
-							<h4><b>Sentiment Analysis to Classify Online Abuse</b></h4>
-							<h6 class="expert">(July 2018 – December 18)</h6><span class="margin-tb-20"></span>
-							<p class="progress-title"><b>Under: Dr. Saket Anand, IIITD</b></p>
-							<p class="progress-title ">In this project we explored few Deep Learning techniques to detect and classify abusive comments. Dataset: Wikipedia detox, Twitter. Achieving F1 ~ 85%.</p>
-						</div>
-					</div>
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-4 margin-tb-30">
-					<div class="card p-2">
-						<div class="card-body">
-							<h4><b>2048 vs AI</b></h4>
-							<h6 class="expert">(July 18 – December 18)</h6><span class="margin-tb-20"></span>
-							<p class="progress-title"><b>Under: Dr. Mayank Vatsa, IIITD</b></p>
-							<p class="progress-title ">In this project we implemented and compared multiple AI models which can play the game 2048 to make the maximum score. AI Models: Search Algorithms, RL, NN and NN+RL. Our search algorithms even exceeded the Stanford paper results.</p>
-						</div>
-					</div>
-				</div><!-- col-md-6 -->
-				
-				<div class="col-sm-12 col-md-4 margin-tb-30">
-					<div class="card p-2">
-						<div class="card-body">
-							<h4><b>Web Based Enterprise Application for E-Commerce</b></h4>
-							<h6 class="expert">(June 2015 – March 2016)</h6><span class="margin-tb-20"></span>
-							<p class="progress-title"><b>Under: Dr. R. Elijah Blessing, Director Collaborations, Karunya University</b></p>
-							<h6 class="expert ">Team Size: 4</h6>
-							<p class="progress-title ">Stipend: Rs 20,000 – 30,000 / month (1 dollar per hour paid monthly) Worked as, a ‘Software Engineer’ on a part-time basis for a consultancy project on ’Java web development’ for a US based company.</p>
-						</div>
-					</div>
-				</div><!-- col-md-6 -->
-				
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- Project And Research -->	
-	
-	
-	<section class="skills-section section" style="padding-bottom: 3em !important;">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Minor ML/DL Projects</b></h3>
-						<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-					<div class="experience margin-b-50"></div>
-					<div class="experience margin-b-10">
-						<p class="progress-title"><b>1. &nbsp;YOLO PyTorch – Object Detection and Classification (Real Time)</b></p>				
-					</div>
-				<div class="experience margin-b-10">
-					<p class="progress-title"><b>2. &nbsp;SOTA EfficientNets (Transfer Learning)</b></p>				
-				</div>
-				<div class="experience margin-b-10">
-					<p class="progress-title"><b>2. &nbsp;AutoEncoders for Faces</b></p>				
-				</div>
-				<div class="experience margin-b-10">
-					<p class="progress-title"><b>2. &nbsp;LSTM for sequential audio data classification</b></p>				
-				</div>
-				<div class="experience margin-b-10">
-					<p class="progress-title"><b>3. &nbsp;Neural Networks from Scratch – (MNIST Dataset)</b></p>				
-				</div>
-			<div class="experience margin-b-10">
-				<p class="progress-title"><b>4. &nbsp;Linear Regression from Scratch – (Boston Housing Dataset)</b></p>	
-			</div>
-			<div class="experience margin-b-10">
-				<p class="progress-title"><b>5. &nbsp;Logistic Regression from Scratch – (MNIST Dataset)</b></p>	
-			</div>
-			<div class="experience margin-b-10">
-				<p class="progress-title"><b>6. &nbsp;SVM Classification – Hindi Handwritten Digits</b></p>	
-			</div>
-			<div class="experience margin-b-10">
-				<p class="progress-title"><b>7. &nbsp;Alexnet in PyTorch – CIFAR Dataset</b></p>	
-			</div>
-					
-					
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-		
-	</section><!-- Internship-section -->
-	
-	
-	<section class="experience-section section" style="padding-top: 2.5em !important;">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Work Experience</b></h3>
-						<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-				
-					<div class="experience margin-b-50">
-						<h4><b>Head of Development</b></h4>
-						<h5 class="font-yellow"><b>Covenant IT Solutions Pvt Ltd</b></h5>
-						<h6 class="margin-t-10">(March 2016 – October 2018)</h6>
-						<p class="font-semi-white margin-tb-30">Worked as ‘Head of Development’ in our start-up Covenant IT Solutions Private Limited efficiently leading a team of 8+ employees and interns, trying to build a robust and stable online e-commerce with IBM Bluemix Cloud and many other technologies. </p>
-						
-					</div><!-- experience -->
-					
-					<div class="experience margin-b-50">
-						<h4><b>Web Designer and Developer</b></h4>
-						<h5 class="font-yellow"><b>Karunya University </b></h5>
-						<h6 class="margin-t-10">(July 2019 – July 2019)</h6>
-						<p class="font-semi-white margin-tb-30">Worked as Web Designer and Developer at Computer Technology Centre, Karunya University under “Earn While You Learn Scheme” for a fixed stipend. </p>
-						
-					</div><!-- experience -->
-					
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-		
-	</section><!-- Internship-section -->
-	
-	<section class="education-section section mt-2" style="padding-top: 2.5em !important;">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Internship</b></h3>
-						<!--<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>-->
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-				
-					<div class="experience margin-b-50">
-						<h4><b>Topic Modelling – United Health Group (Optum).</b></h4>
-						<h5 class="font-yellow"><b>(June 2014 – Auguest 2014)</b></h5>
-					<h6 class="margin-t-10">Guide:  Dr. Suman Roy, Director Data Science, Optum.</h6>
-						<p class=" margin-tb-30">In this research project we aim to develop a novel generative model architecture which can find the sentiment of a statement given a text and a topic. </p>						
-					</div><!-- Internship -->
-					
-					<div class="experience margin-b-50">
-						<h4><b>Campus Network (Guest Access Solution) - Kakinada Seaports LTD.</b></h4>
-						<h5 class="font-yellow"><b>(June 2014 – Auguest 2014)</b></h5>
-					<h6 class="margin-t-10">Guide:  Pardha Raju, Sr. Manager – IT, KSPL</h6>
-						<p class=" margin-tb-30">This project is to Design a guest access solution to provide network access to visitors segregating the traffic from the internal network using web-based authentication with full auditing of location, MAC, IP address, username. </p>		
-					</div><!-- Internship -->
-					
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-		
-	</section><!-- Internship-section -->
-	
-	<section class="experience-section section" style="padding-top: 2.5em !important;">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Education</b></h3>
-						<h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-					<div class="education-wrapper">
-						<div class="education margin-b-50">
-							<h4><b>Masters - Artificial Intelligence</b></h4>
-							<h5 class="font-yellow"><b>IIIT, Delhi</b></h5>
-							<h6 class="font-lite-black margin-t-10">(2018 – 2020)</h6>
-							
-						</div><!-- education -->
-						
-						<div class="education margin-b-50">
-							<h4><b>Bachelor Of Computer Science </b></h4>
-							<h5 class="font-yellow"><b>Karunya University, Coimbatore</b></h5>
-							<h6 class="font-lite-black margin-t-10">(2012 - 2016)</h6>
-							</div><!-- education -->
-						
-						<div class="education margin-b-50">
-							<h4><b>Maths, Physics, Chemistry - Intermediate</b></h4>
-							<h5 class="font-yellow"><b>Narayana Junior College, Kakinada</b></h5>
-							<h6 class="font-lite-black margin-t-10">(2010 - 2012)</h6>
-							</div>
-						<div class="education margin-b-50">
-							<h4><b>AP State Board SSC</b></h4>
-							<h5 class="font-yellow"><b>Nalanda Vidya Niketan, Kakinada</b></h5>
-							<h6 class="font-lite-black margin-t-10">(2010)</h6>
-							
-						</div>
-						
-						<!-- education -->
-					</div><!-- education-wrapper -->
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-		
-	</section><!-- about-section -->
-	
-	<section class="skills-section section" style="padding-top: 2.5em !important;">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Awards & Achievement</b></h3>						
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-				
-					<div class="experience margin-b-50"></div>
-					<div class="experience margin-b-30">
-						<p class="progress-title"><b>1. &nbsp;Ranked 14, in Hard level Hacker Rank Machine Learning Challenge – Guess the Flipkart Query</b></p>				
-					</div>
-				<div class="experience margin-b-30">
-					<p class="progress-title"><b>2. &nbsp;2nd prize in COD++ (2015), a coding Event at a National Level Technical Symposium ‘Expertise 2k15’ Conducted by Department of IT, Karunya University</b></p>				
-				</div>
-				<div class="experience margin-b-30">
-					<p class="progress-title"><b>3. &nbsp;Received grade	10/10	in	all	programming	labs	(Java	Programming	Lab, Cryptography and Network Security Lab, Web Technology Lab and, Digital Design Lab)and 9/10 in all the other major labs.</b></p>				
-				</div>					
-		
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-		
-	</section><!-- Internship-section -->
-	
-	
-	
-	
-	<section class="experience-section section" style="padding-top: 2.5em !important;">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Positions of Responsibility</b></h3>						
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-				
-					<div class="experience margin-b-50"></div>
-					<div class="experience margin-b-30">
-						<p class="progress-title font-semi-white"><b>Authorised Publisher for TDS - Towards Data Science, a premium of Medium for Data Science field in AI, ML, DL, IR domains.&nbsp; (February 2019 – Till Date)</b></p>				
-					</div>
-				<div class="experience margin-b-30">
-					<p class="progress-title font-semi-white"><b>Team Member of IIITD Lab – Data Science (LCS2) working on Novel Approaches to “Detect Collusive Tweets in Twitter”.&nbsp; (December 2018 – Till Date)</b></p>				
-				</div>
-				<div class="experience margin-b-30">
-					<p class="progress-title font-semi-white"><b>Additional Director and Authorised Signatory for start-up “Covenant IT Solutions Pvt Ltd”. &nbsp;(January 2018 – Till Date)</b></p>				
-				</div>
-				
-				<div class="experience margin-b-30">
-					<p class="progress-title font-semi-white"><b>Head of Development for start-up “Covenant IT Solutions Pvt Ltd” efficiently leading a team of 8+ employees and interns. &nbsp;(March 2016 – October 2018)</b></p>				
-				</div>	
-				
-				<div class="experience margin-b-30">
-					<p class="progress-title font-semi-white"><b>Senior Residential Advisor in Boys Hostel, Karunya University. &nbsp;(March 2016 – March 2017)</b></p>				
-				</div>
+      <dl class="stats" aria-label="Career highlights">
+        <div class="stat"><dt class="label">Years of Experience</dt><dd class="num">8+</dd></div>
+        <div class="stat"><dt class="label">Publications</dt><dd class="num">5</dd></div>
+        <div class="stat"><dt class="label">Patents</dt><dd class="num">5</dd></div>
+        <div class="stat"><dt class="label">GMV Impact</dt><dd class="num">$20M</dd></div>
+      </dl>
+    </div>
+  </section>
 
-			<div class="experience margin-b-30">
-					<p class="progress-title font-semi-white"><b>Student Coordinator for Photoshop event named 'Picster' for a National Level Technical Symposium in Karunya University. &nbsp;(March 2015)</b></p>				
-				</div>
-				
-		<div class="experience margin-b-30">
-			<p class="progress-title font-semi-white"><b>Website Admin for TECHAGON’15, a National Level Technical Symposium organized by Department of CSE, Karunya University.&nbsp; (March 2015)</b></p>				
-		</div>
-		
-		<div class="experience margin-b-30">
-			<p class="progress-title font-semi-white"><b>Website Admin for MAD (Making A Difference) Event by Dove Department, Karunya University. &nbsp;(Auguest 2015)</b></p>				
-		</div>
-		
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-		
-	</section><!-- Internship-section -->
-	
-	
-	
-	<section class="skills-section  section mt-2 pb-4" style="padding-top: 2.5em !important; padding-bottom: 2em !important;">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Hobbies</b></h3>
-						<!--<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>-->
-					</div>
-				</div><!-- col-sm-4 -->
-								<div class="col-sm-8">				
-					<div class=" margin-b-50"></div>
-					<div class=" margin-b-20">						
-						<p class="margin-tb-15"><b>Photography</b></p>										
-					</div>
-					<div class=" margin-b-20">						
-						<p class="margin-tb-15"><b>Reading, Reading, Reading</b></p>										
-					</div>
-					<div class=" margin-b-20">						
-						<p class="margin-tb-15"><b>Graphic Designing</b></p>					
-					</div>
-								</div>
-			</div>
-		</div>		
-	</section><!-- Internship-section -->
-		
-	<footer class="mt-4 pt-4" style="background: white;">
-		<p class="font-semi-white copyright">
-			<a href="#ontop" class="mb-1"><i class="fa fa-angle-double-up fa-2x"></i></a><br>
-			Copyright &copy; &nbsp;<script>document.write(new Date().getFullYear());</script> All rights reserved
-		</p>
-	</footer>	
+  <!-- ================= Experience ================= -->
+  <section id="experience" aria-labelledby="experience-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="index">01</span>
+        <h2 id="experience-title">Experience</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
 
-	<!-- SCIPTS -->
-	<script src="common-js/jquery-3.2.1.min.js"></script>	
-	<script src="common-js/tether.min.js"></script>	
-	<script src="common-js/bootstrap.js"></script>	
-	<script src="common-js/isotope.pkgd.min.js"></script>	
-	<script src="common-js/jquery.waypoints.min.js"></script>	
-	<script src="common-js/progressbar.min.js"></script>	
-	<script src="common-js/jquery.fluidbox.min.js"></script>	
-	<script src="common-js/scripts.js"></script>
-	
+      <ol class="timeline">
+        <li class="reveal">
+          <div class="job-head">
+            <h3>Walmart</h3>
+            <span class="job-dates">Oct 2024 – Present</span>
+          </div>
+          <p class="job-role">Senior Data Scientist</p>
+          <ul class="job-points">
+            <li>Developed and launched the <strong>"Overall Pick" badge</strong> for the Canadian market, driving a <strong>$20M lift in GMV</strong> and a <strong>+3 bps</strong> increase in conversion.</li>
+            <li>Optimized the <strong>SmartSubs</strong> system for the Canadian market, achieving <strong>$3M in cost savings</strong> (a <strong>44% reduction</strong>) while increasing overall coverage to <strong>60.3%</strong>.</li>
+            <li>Designed and deployed <strong>D40</strong>, a SmartSubs extension tailored for medical domains, which streamlined the data pipeline and significantly reduced reliance on external agencies.</li>
+            <li>Built the <strong>"Customer Choice Pick"</strong> feature in Canada, enabling users to seamlessly select replacement products for out-of-stock (OOS) items.</li>
+            <li><strong>3 filed &amp; 1 approved patents</strong> on various ideas in collaboration with the team.</li>
+            <li>Owning development of features for the Mexico and Canada markets, including <strong>AuthHold</strong>, the <strong>"Low in Stock" badge</strong>, and the <strong>"Overall Pick" badge</strong>.</li>
+          </ul>
+        </li>
+
+        <li class="reveal">
+          <div class="job-head">
+            <h3>PromptCloud Technologies</h3>
+            <span class="job-dates">Dec 2021 – Oct 2024</span>
+          </div>
+          <p class="job-role">Senior Data Scientist</p>
+          <ul class="job-points">
+            <li>Worked on e-commerce <strong>product matching</strong> using textual data along with image features extracted from traditional and pretrained models, with an accuracy of <strong>94%</strong>.</li>
+            <li>Trained <strong>Vicuna and Mistral LLM (GenAI)</strong> models to perform classification and generative tasks with an accuracy of <strong>93%</strong>.</li>
+            <li>Built a <strong>hierarchical category-matching model</strong> that matches products to their standardized categories in hierarchies, with an accuracy of <strong>87%</strong>.</li>
+            <li>Built an <strong>O*NET job classification model</strong> with over 1,000 classes, with an accuracy of <strong>89%</strong>.</li>
+            <li>Built a model to identify <strong>brand logos on screenshots</strong> using template matching (varying sizes), with an accuracy of <strong>99%</strong>.</li>
+          </ul>
+        </li>
+
+        <li class="reveal">
+          <div class="job-head">
+            <h3>KaHa Technologies (Cove IoT)</h3>
+            <span class="job-dates">Aug 2021 – Dec 2021</span>
+          </div>
+          <p class="job-role">Senior Data Scientist</p>
+          <ul class="job-points">
+            <li>Deployed a <strong>drowsiness detection model</strong> using PPG signals with limited and noisy data, with an accuracy of <strong>93%</strong>.</li>
+            <li>Built a hybrid approach to <strong>non-invasive continuous blood pressure estimation</strong> using PPG signals.</li>
+          </ul>
+        </li>
+
+        <li class="reveal">
+          <div class="job-head">
+            <h3>TCS Research (TRDDC)</h3>
+            <span class="job-dates">Sep 2020 – Aug 2021</span>
+          </div>
+          <p class="job-role">Deep Learning &amp; AI Researcher</p>
+          <ul class="job-points">
+            <li>Built a <strong>persuasive chatbot system</strong> on RL-based multi-agent conversations with common-sense reasoning, personality and causality.</li>
+            <li>Worked on <strong>code translation and summarization</strong> using a pivot language without parallel corpora.</li>
+            <li>Worked on <strong>facial image biometrics for macaques</strong> using a siamese network.</li>
+          </ul>
+        </li>
+
+        <li class="reveal">
+          <div class="job-head">
+            <h3>Covenant IT Solutions</h3>
+            <span class="job-dates">Mar 2016 – Jun 2018</span>
+          </div>
+          <p class="job-role">Data Scientist</p>
+          <ul class="job-points">
+            <li>Led development of <strong>ML models for product recommendations</strong> and user review analysis, integrating them into the platform.</li>
+            <li>Collaborated with marketing &amp; project management on new Data Science initiatives that aid better user experience.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3 class="subsection-label reveal">Internships — Data Science</h3>
+      <div class="intern-grid">
+        <article class="intern-card reveal">
+          <h4>Leibniz University, Germany</h4>
+          <span class="job-dates">Jan 2020 – Jun 2020</span>
+          <p>Developed ML models to predict dementia risk with sparse, high-dimensional data and designed an automata-based graph simulation model for COVID-19 spread analysis and forecasting.</p>
+        </article>
+        <article class="intern-card reveal">
+          <h4>UnitedHealth Group (Optum Global Services)</h4>
+          <span class="job-dates">Apr 2019 – Aug 2019</span>
+          <p>Developed and deployed an end-to-end LDA-based model to automate detection of fraudulent medical discharge summaries, presented at LIC Delhi and currently in use by the NHA. Enhanced LDA for short texts by 5–8% through sentiment analysis.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Publications & Patents ================= -->
+  <section id="publications" aria-labelledby="publications-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="index">02</span>
+        <h2 id="publications-title">Publications &amp; Patents</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+
+      <ol class="pub-list">
+        <li class="reveal">
+          <div>
+            <p class="pub-title">ENDEMIC: a semi-supervised co-attention network for early detection of COVID-19 fake news</p>
+            <p class="pub-detail">Achieved 97% accuracy in early detection of COVID-19 fake news.</p>
+            <span class="venue">PAKDD 2021</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="pub-title">Cross-SEAN: a cross-stitch semi-supervised neural attention model for COVID-19 fake news detection</p>
+            <p class="pub-detail">Achieved 95% accuracy in COVID-19 fake news detection.</p>
+            <span class="venue">Elsevier 2021</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="pub-title">Embedding-based joint-sentiment model for short text (Master's thesis)</p>
+            <p class="pub-detail">Average improvement of 10% in topic coherence and 5% in topic diversification.</p>
+            <span class="venue">ICWSM 2021</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="pub-title">Blackmarket tweet detection</p>
+            <p class="pub-detail">Model classifying the source of tweets (blackmarket vs genuine), F1-score 0.89.</p>
+            <span class="venue">ASONAM 2019</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="pub-title">Conference task on multi-modal data</p>
+            <p class="pub-detail">Conducted a conference task on multi-modal data (textual, visual &amp; audio) with 50+ participants.</p>
+            <span class="venue">SemEval-2020</span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="patent-note reveal">
+        <p class="pub-title">Patents — 5 total</p>
+        <p>3 filed &amp; 1 approved at Walmart, in collaboration with the team.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Skills ================= -->
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="index">03</span>
+        <h2 id="skills-title">Skills</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3>Programming</h3>
+          <ul class="chips">
+            <li>Python</li><li>Java</li><li>C</li><li>C++</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>ML / AI</h3>
+          <ul class="chips">
+            <li>NLP</li><li>Machine Learning</li><li>Deep Learning</li><li>GenAI</li><li>LLMs</li><li>Computer Vision</li><li>Recommendation Engines</li><li>MLOps</li><li>Time Series</li><li>Statistics</li><li>Data Analysis</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Frameworks &amp; Tools</h3>
+          <ul class="chips">
+            <li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>PySpark</li><li>Scikit-learn</li><li>NLTK</li><li>SpaCy</li><li>OpenCV</li><li>Seaborn / Matplotlib</li><li>Flask</li><li>MongoDB</li><li>SQL</li><li>Spark / Hadoop</li><li>AWS</li><li>Docker</li><li>Git</li><li>Jupyter</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Core CS</h3>
+          <ul class="chips">
+            <li>OOPs</li><li>Data Structures &amp; Algorithms</li><li>Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Education & Certifications ================= -->
+  <section id="education" aria-labelledby="education-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="index">04</span>
+        <h2 id="education-title">Education &amp; Certifications</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="edu-grid">
+        <div class="reveal">
+          <p class="col-label">Education</p>
+          <article class="edu-item">
+            <h3>IIIT Delhi</h3>
+            <p class="degree">M.Tech, Artificial Intelligence · Aug 2020</p>
+            <p class="meta">CGPA <strong>8.45 / 10</strong></p>
+          </article>
+          <article class="edu-item">
+            <h3>Karunya University, Coimbatore</h3>
+            <p class="degree">B.Tech, Computer Science and Engineering · Aug 2016</p>
+            <p class="meta">CGPA <strong>8.2 / 10</strong></p>
+          </article>
+        </div>
+        <div class="reveal">
+          <p class="col-label">Certifications</p>
+          <ul class="cert-list">
+            <li>Machine Learning<span class="issuer">Stanford University</span></li>
+            <li>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization<span class="issuer">DeepLearning.AI</span></li>
+            <li>Neural Networks and Deep Learning<span class="issuer">DeepLearning.AI</span></li>
+            <li>Structuring Machine Learning Projects<span class="issuer">DeepLearning.AI</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Achievements ================= -->
+  <section id="achievements" aria-labelledby="achievements-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="index">05</span>
+        <h2 id="achievements-title">Achievements</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="ach-grid">
+        <article class="ach-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <p><strong>Teaching Assistant</strong>, Machine Learning (PG), IIIT Delhi, 2019.</p>
+        </article>
+        <article class="ach-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M17 4h3a1 1 0 0 1 1 1c0 3-2 5-4.5 5.5M7 4H4a1 1 0 0 0-1 1c0 3 2 5 4.5 5.5M17 4v5a5 5 0 0 1-10 0V4z"/></svg>
+          <p>Ranked <strong>14</strong> in the hard-level HackerRank Machine Learning Challenge <strong>"Guess the Flipkart Query"</strong>.</p>
+        </article>
+        <article class="ach-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+          <p><strong>2nd prize, "King Coders" (2016)</strong> — coding event by the Computer Society of India.</p>
+        </article>
+        <article class="ach-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <p><strong>2nd prize, COD++ (2015)</strong> — coding event at national-level technical symposium "Expertise 2k15".</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Contact ================= -->
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="contact-inner reveal">
+        <h2 id="contact-title">Let's talk.</h2>
+        <p class="lede">Open to conversations about machine learning, NLP research, and building recommendation systems at scale.</p>
+        <div class="contact-lines">
+          <a href="mailto:williamscott701@icloud.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            williamscott701@icloud.com
+          </a>
+          <a href="tel:+917845108300">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91-7845108300
+          </a>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bangalore, India
+          </span>
+        </div>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="resume.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/williamscottp/">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/williamscott701">GitHub</a>
+          <a class="btn btn-ghost" href="https://medium.com/@williamscott701">Medium</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="year">2026</span> William Scott Paka</p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---- Footer year ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- Theme toggle (persists via localStorage) ---- */
+  var root = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
+  function currentTheme() {
+    var explicit = root.getAttribute('data-theme');
+    if (explicit) return explicit;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function updateToggleLabel() {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    toggle.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+  }
+  toggle.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('wsp-theme', next); } catch (e) {}
+    updateToggleLabel();
+  });
+  updateToggleLabel();
+
+  /* ---- Scroll reveal (respects prefers-reduced-motion) ---- */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(revealEls, function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    Array.prototype.forEach.call(revealEls, function (el) { io.observe(el); });
+  }
+})();
+</script>
+
 </body>
 </html>
